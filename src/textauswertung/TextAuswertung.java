@@ -8,12 +8,13 @@ import java.io.InputStreamReader;
 public class TextAuswertung {
 
     public static void main(String[] args) throws Exception {
-//        dateiauswerten("H:\\tst.txt");
-        dateiauswerten("H:\\gesetztesentwurf.txt");
+        String[] textarray = dateiauswerten("H:\\tst.txt");
+//      String[] textarray = dateiauswerten("H:\\gesetztesentwurf.txt");
+        wörterzählen(textarray);
 
     }
 
-    static void dateiauswerten(String pfad) {
+    static String[] dateiauswerten(String pfad) {
         String text = "";
         String zeile = "";
         int anzahlzeile = 0;
@@ -48,6 +49,7 @@ public class TextAuswertung {
             System.out.println("Wörter: " + (textarray.length));
             System.out.println("Zeichen: " + zeichen);
             System.out.println("Zeilen: " + anzahlzeile);
+            return textarray;
 
         } catch (IOException ioe) {//Ausnahmebehandlung
             ioe.printStackTrace();
@@ -64,5 +66,11 @@ public class TextAuswertung {
 
         }
 
+        return null;
     }
+
+    static void wörterzählen(String[] textarray) {
+           
+    }
+
 }
