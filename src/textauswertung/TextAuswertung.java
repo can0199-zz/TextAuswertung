@@ -8,8 +8,8 @@ import java.io.InputStreamReader;
 public class TextAuswertung {
 
     public static void main(String[] args) throws Exception {
-        dateiauswerten("H:\\tst.txt");
-//        dateieinlesene("H:\\gesetztesentwurf.txt");
+//        dateiauswerten("H:\\tst.txt");
+        dateiauswerten("H:\\gesetztesentwurf.txt");
 
     }
 
@@ -30,8 +30,13 @@ public class TextAuswertung {
             br = new BufferedReader(isr);
 
             while ((zeile = br.readLine()) != null) {
-                text += zeile.trim() + " ";
+                if (zeile.isEmpty()) {
+
+                } else {
+                    text += zeile.trim() + " ";
+                }
                 anzahlzeile++;
+
             }
 
             String textarray[] = text.split(" ");//Einzelne Wörter werden in dem Array gespeichert
